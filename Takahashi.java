@@ -6,12 +6,14 @@ public class Takahashi {
             return 0;
         }
        
-        int a=solution(arr,n,count,i+1);
+      int a;
         if(count%2!=0){
             b=arr[i]+solution(arr,n,count+1,i+1);
+             a=solution(arr,n,count,i+1);
         }
        else{
             b=arr[i]*2+solution(arr,n,count+1,i+1);
+            a=solution(arr,n,count,i+1);
         }
         return Math.max(a,b);
     }
