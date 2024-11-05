@@ -2,7 +2,7 @@ import java.util.*;
 public class List_Set {
    public static void main(String[]args){
     List<Object> l=new ArrayList<>();
-    Set<Object> s=new HashSet<>();
+    Set<Object> s=new Hashset<>();
     l.add(0, "Hi");
     l.add(1, "Hello");
 l.add("Hi");

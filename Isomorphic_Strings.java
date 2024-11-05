@@ -1,8 +1,8 @@
 import java.util.*;
 public class Isomorphic_Strings {
     public boolean isIsomorphic(String s,String t){
-        Map<Character,Character>map=new HashMap<>();
-        HashSet<Character>st=new HashSet<>();
+       Map<Character,Character>map=new HashMap<>();
+       
         for(int i=0;i<s.length();i++){
             Character sch=s.charAt(i);
             Character tch=t.charAt(i);
@@ -11,12 +11,12 @@ public class Isomorphic_Strings {
 return false;
                 }
             }
-                else if(st.add(tch)){
+                else if(map.containsValue(tch)){
                     return false;
                 }
                 else{
                     map.put(sch,tch);
-                    st.add(tch);
+                   
                 }
             }
         

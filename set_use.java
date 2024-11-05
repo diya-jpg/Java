@@ -1,7 +1,7 @@
 import java.util.*;
 public class set_use {
     public static void main(String[]args){
-        Set<String> set = new HashSet<>();
+        Set<String> set = new Hashset<>();
          set.add("apple");
          set.add("banana");
        if(set.contains("apple")){
