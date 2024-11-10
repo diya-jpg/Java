@@ -10,7 +10,11 @@ public class toggle {
         //chack->alphabet-small,capital
         boolean flag=true;
         char ch=str.charAt(i);
+        if(ch==' '){
+            continue;
+        }
         int asci=(int)ch;
+      
         if(asci>=97) flag=false;//samll
         if(flag==true){
             asci+=32;
