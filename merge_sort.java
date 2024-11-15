@@ -36,7 +36,7 @@ left[i]=arr[l+i];
     }
 }
     static void mergeSort(int[]arr,int l,int r){
-        if(l>=r) return;
+        if(l==r) return;
         if (l < r) {
             int mid = (l + r) / 2;
 
