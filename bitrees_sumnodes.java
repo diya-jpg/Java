@@ -6,18 +6,14 @@ class Node {
         this.val = val;
     }
 }
-public class bitrees_size {
-    public static int size(Node node){
-        if (node == null) {return 0;}
-     int size=0;
-     size+=size(node.left);
-     size+=size(node.right);
-     size+=1;
-     return size;
-    }
-    public static int size2(Node root){
-        if (root == null) {return 0;}
-return 1+size2(root.left)+size2(root.right);
+public class bitrees_sumnodes{
+    public static int sum(Node node){
+        int max=0;
+      if(node==null){
+        return 0;
+      }
+     
+return node.val+sum(node.left)+sum(node.right);
     }
    public static void main(String[] args) {
     Node root=new Node(1);
@@ -33,7 +29,7 @@ return 1+size2(root.left)+size2(root.right);
     Node f=new Node(7);
     b.left=e;
     b.right=f;
-System.out.println(size2(root));
+System.out.println(sum(root));
   
    }
 
