@@ -11,16 +11,7 @@ public class bitrees_level_bfs{
         if(root == null) return 0;
         return 1 + Math.max(height(root.left), height(root.right));
     }
-    public static void nthlevel(Node node,int k){
-    if (node ==null){
-        return;
-    }
-  if(k==1){
-System.out.print(node.val+" ");
-  }
-  nthlevel(node.left,k-1);
-  nthlevel(node.right,k-1);
-    }
+   graph_represe
     public static void levelorderTraversal(Node node){
         int levels = height(node)+1;
         for(int i=1;i<=levels;i++){
