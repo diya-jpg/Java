@@ -1,0 +1,103 @@
+1)//Maximum and Minimum Element in an array
+class Solution {
+    public Pair<Integer, Integer> getMinMax(int[] arr) {
+        // Code Here
+       
+        int x=Integer.MIN_VALUE,y=Integer.MAX_VALUE;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>x){
+                x=arr[i];
+            }
+            if(arr[i]<y){
+                y=arr[i];
+            }
+        }
+         return new Pair<>(y,x);
+    }
+   
+}
+
+
+//2)Reverse an array
+public void reverseArray(int arr[]) {
+    // code here
+    int i=0;
+    int j=arr.length-1;
+    while(i<j){
+        int temp;
+        temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+        i++;
+        j--;
+    }
+}
+
+//3)Maximum Subbarray 
+public int maxSubArray(int[] nums) {
+    int currSum=0;
+    int maxSum=Integer.MIN_VALUE;
+    if(nums.length==0){
+        return 0;
+    }
+    if(nums.length==1){
+        return nums[0];
+    }
+    for(int i=0;i<nums.length;i++){
+       currSum=currSum+nums[i];
+         if(currSum>maxSum){
+            maxSum=currSum;
+         }
+         if(currSum<0){
+            currSum=0;
+         }
+    }
+    return maxSum;
+}
+
+
+//4)Contains Duplicate
+public boolean containsDuplicate(int[] nums) {
+    HashMap<Integer, Integer> map = new HashMap<>();
+     
+    
+     for (int i=0;i<nums.length;i++) {
+         map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
+     }
+
+     
+     for (var e : map.entrySet()) {
+         if (e.getValue() > 1) {
+             return true; 
+         }
+     }
+     
+     return false; 
+ }
+
+
+ //5)Choclate distribution problem
+ public int findMinDiff(ArrayList<Integer> arr, int m) {
+    // your code here
+   
+    Collections.sort(arr);
+    
+    int a=Integer.MAX_VALUE;
+    int n=arr.size();
+    for(int i=0;i+m-1<n;i++){
+       int b=arr.get(i+m-1)-arr.get(i);
+       a=Math.min(a,b);
+    }
+   return a;
+}
+
+
+ //6)Search in an rotated array
+ public int search(int[] nums, int target) {
+    for(int i=0;i<nums.length;i++){
+        if(target==nums[i]){
+            return i;
+        }
+    }
+
+return -1;}
