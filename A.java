@@ -12,3 +12,4 @@ public class A {
         System.out.println(al);
     }
 }
+hi
