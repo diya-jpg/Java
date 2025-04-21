@@ -8,7 +8,7 @@ public class String_permutation {
         for(int i=0;i<s.length();i++){
 x=s.charAt(i);
 freq[x]++;
-x=s.charAt(i);
+x=s1.charAt(i);
 freq[x]--;
         }
         for(int i=0;i<freq.length;i++){
@@ -20,7 +20,7 @@ return true;
     }
     public static void main(String[] args) {
         String str = "abc";
-        String str1="bdc";
+        String str1="bac";
 System.out.println(permu(str, str1));
     }
 }

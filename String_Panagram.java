@@ -1,5 +1,6 @@
 public class String_Panagram {
-    public static boolean pan(String s) {boolean arr[]=new boolean[26];
+    public static boolean pan(String s) 
+    {boolean arr[]=new boolean[26];
         for(int i=0;i<s.length();i++)
         {
             char ch=s.charAt(i);
