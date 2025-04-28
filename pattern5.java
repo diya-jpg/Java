@@ -37,7 +37,7 @@ public class pattern5 {
             
         }
 
-          3
+          
           
         
     }
