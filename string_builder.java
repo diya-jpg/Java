@@ -8,15 +8,16 @@ public class string_builder {
    str.setCharAt(0, 'm');
    System.out.println(str);
    str.append(3);
-   str.insert(1,2);
+   str.insert(3,2);
    
    str.deleteCharAt(0);
    System.out.println(str);
    StringBuilder s=new StringBuilder("physics");
-   s.reverse();
+   String x=s.reverse().toString();
    s.reverse();
    System.out.println(s);
    s.delete(2,4);//2 include 4 excludeed
    System.out.println(s);
+   System.out.println(x);
     }
 }
