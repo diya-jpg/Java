@@ -5,6 +5,7 @@ public class pattern_E {
           if(i==0||i==6){
             stars=7;
           }
+          
           else if(i==1||i==5){
             stars=1;
           }
