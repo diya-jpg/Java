@@ -11,11 +11,16 @@ class pattern_zig_zag {
                 map.putIfAbsent(key, new ArrayList<>());
                 map.get(key).add(mat[i][j]);
         }}
+        int count=1;
        for (var entry : map.entrySet()) {
     List<Integer> list = entry.getValue();
 
-   Collections.reverse(list);
+   count++; // increment counter for each entry
 
+    // Reverse only 2nd and 4th lists
+    if (count == 2 || count == 4) {
+        Collections.reverse(list);
+    }
     for (int val : list) {
       System.out.print(val);
     }

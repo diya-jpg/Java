@@ -1,44 +1,38 @@
+import java.util.*;
 public class quicksort_new {
-     public static  void quicksort(int []nums,int low,int high){
-       if(low<high){
-        int pivot=partition(nums,low,high);
-        quicksort(nums,low,pivot-1);
-        quicksort(nums,pivot+1,high);
-       }
-    }
-    public static int partition(int []nums,int low,int high){
-        int pivot=nums[high];
-        int i=low-1;
-        for(int j=low;j<high;j++){
-            if(nums[j]<pivot){
-                i++;
-                int temp=nums[i];
-                nums[i]=nums[j];
-                nums[j]=temp;
-            }
+     public static  void sort(int []nums,int low,int high){
+      if(low>=high){
+        return;
+      }
+      int s=low;
+      int e=high;
+      int m=s+(e-s)/2;
+      int pivot=nums[m];
+      while(s<=e){
+        while(nums[s]<pivot){
+            s++;
         }
-        int temp=nums[i+1];
-        nums[i+1]=nums[high];
-        nums[high]=temp;
+        while(nums[e]>pivot){
+            e--;
+        }
+        if(s<=e){
+            int temp=nums[s];
+            nums[s]=nums[e];
+            nums[e]=temp;
+            s++;
+            e--;
+        }
+        sort(nums,low,e);
+        sort(nums,s,high);
+      }
+    }
 
-        return i+1;
-    }
-    public static int[] sortArray(int[] nums) {
-      quicksort(nums,0,nums.length-1);
-      return nums;
-    }
-    public static void printarr(int []arr){
-        for(int i=0;i<arr.length;i++){
-            System.out.print(arr[i]+" ");
-        }
-                
-    }
+   
     public static void main(String[] args) {
         int []arr={7,2,1,6,8,5,3,4};
-        printarr(arr);
+      
         System.out.println();
-        int[] sorted = sortArray(arr);
-        printarr(sorted);
-
+    sort(arr,0,arr.length-1);
+        System.out.println(Arrays.toString(arr));
     }
 }
